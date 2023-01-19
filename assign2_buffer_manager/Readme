@@ -1,0 +1,74 @@
+Group4 -  Indraneel Katta Balaji (A20511759)
+          Venu Prakash Gunda (A20513398)
+	  	  Neha Gawali (A20523722)
+
+Project Execution:
+
+1.Open the terminal and go to the project directory : cd<project-path>
+
+2.Run 'make' to compile and create the new object(.o) files.
+
+3.Run 'make run' to run the files 
+
+Project File Structure:
+
+1. buffer_mgr.c
+2. buffer_mgr.h
+3. buffer_mgr_stat.c
+4. buffer_mgr_stat.h
+5. dberror.c
+6. dberror.h
+7. dt.h
+8. storage_mgr.c
+9. storage_mgr.h
+10. test_assign2_1.c
+11. test_assign2_2.c
+12. test_helper.h
+13. readme.txt
+
+
+IMPLEMENTAIONS:
+
+    	function 		     		Application
+
+   	searchPage					It is used to look up the requested page in the buffer pool,
+						    	Load the requested page into the BM pageHandle and return RC OK if it is found; otherwise, 
+								return an error code.
+	
+	appendPage()				It is used to read the required page from the disk and add it to the ListPage's end.
+	
+	replacePage()				It is used to replace out the currently shown page for the one that was requested from the disk.
+	
+	FIFO()						It is Used as FIFO replacement strategy
+	
+	LRU()						It is Used as LRU replacement strategy
+	
+	CLOCK()						It is Used as CLOCK replacement strategy
+	
+	initPageList()				It Intializes the ListPage so that pages can be stored in the Buffer Pool.
+	
+	initBufferPool()			It is Used for initializing of the Buffer Pool
+	
+	shutdownBufferPool()		It is Used to shut down the Buffer Pool
+	
+	forceFlushPool()			It is Used to write the data back in the dirty pages in Buffer Pool
+	
+	pinPage()					It is used as a means of pinning the requested page in the buffer pool with pageNum.
+								If a page cannot be located, load it from the file into the buffer pool.
+	
+	markDirty()					It is Used to mark the requested page as dirty page
+	
+	unpinPage()					It is Used to unpin a page
+	
+	forcePage()					It is Used to write the requested page back to the page file on the disk
+	
+	getFrameContents()			It is Used to return an array of PageNumbers whose size is of pageNum and for represnting the empty page frame,use the constant namely NO_PAGE
+	
+	getDirtyFlags()				It is Used to return an array of bools whose size of numPages and then the empty page frames are considered as clean 
+	
+	getFixCounts()				Returns an array of integers with a size of numPages.
+	
+	getNumReadIO()				It is used to indicate how many pages have been read from disk since the buffer pool was initialized.
+	
+	getNumWriteIO()				It is utilized to provide the number of pages that have been written to the page file since the buffer pool was initialized.
+
